@@ -19,6 +19,8 @@ jobs:
           which kubectl
 
       - name: Decrypt secrets
+        env:
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         run: |
           mkdir $HOME/secrets
           gpg --help
