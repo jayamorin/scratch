@@ -25,4 +25,4 @@ jobs:
           mkdir $HOME/secrets
           gpg --help
           gpg --quiet --batch --yes --decrypt --passphrase="$GPG_PASSPHRASE" --output $HOME/secrets/man.txt man.txt.gpg
-          cat man.txt
+          cat $HOME/secrets/man.txt
