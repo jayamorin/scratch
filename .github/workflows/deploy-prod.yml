@@ -18,3 +18,9 @@ jobs:
           sudo chmod +x /usr/local/bin/kubectl
           which kubectl
           kubectl version
+
+      - name: Decrypt secrets
+        run: |
+          mkdir $HOME/secrets
+          gpg --quiet --batch --yes --decrypt --passphrase="$GPG_PASSPHRASE" --output $HOME/secrets/man.txt man.txt.gpg
+          cat man.txt
