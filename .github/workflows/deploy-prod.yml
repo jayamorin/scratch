@@ -1,4 +1,4 @@
-name: Spark CI Prod Manual Deploy
+name: Hello World CI Manual Deploy
 
 on:
   workflow_dispatch:

@@ -1,3 +1,3 @@
-FROM hello-world
+FROM ubuntu:latest
 
-RUN echo 'Hello World'
+RUN cat /etc/os-release
