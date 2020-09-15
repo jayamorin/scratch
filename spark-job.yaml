@@ -12,13 +12,13 @@ spec:
             - name: POSTGRES_USER
               value: "postgres_user"
             - name: POSTGRES_PASSWORD
-              value: "<SECRETS_POSTGRES_PASSWORD>"
+              value: "SECRETS_POSTGRES_PASSWORD"
             - name: REDSHIFT_USER
               value: "redshift_user"
             - name: REDSHIFT_PASSWORD
-              value: "<SECRETS_REDSHIFT_PASSWORD>"
+              value: "SECRETS_REDSHIFT_PASSWORD"
             - name: REDSHIFT_IAM
-              value: "<IAM_ROLE>"
+              value: "IAM_ROLE"
       serviceAccountName: spark
       restartPolicy: Never
   backoffLimit: 4
