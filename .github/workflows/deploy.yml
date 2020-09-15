@@ -32,7 +32,7 @@ jobs:
           POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
           REDSHIFT_PASSWORD: ${{ secrets.REDSHIFT_PASSWORD }}
         run: |
-          sed -i "s|SECRETS_POSTGRES_PASSWORD|${POSTGRES_PASSWORD}|g" spark-job.yaml
-          sed -i "s|SECRETS_REDSHIFT_PASSWORD|${REDSHIFT_PASSWORD}|g" spark-job.yaml
+          sed -i "s/SECRETS_POSTGRES_PASSWORD/${POSTGRES_PASSWORD}/g" spark-job.yaml
+          sed -i "s/SECRETS_REDSHIFT_PASSWORD/${REDSHIFT_PASSWORD}/g" spark-job.yaml
           sed -i 's|IAM_ROLE|arn:aws:iam::123456789012:role/RedshiftToS3|g' spark-job.yaml
           cat spark-job.yaml
